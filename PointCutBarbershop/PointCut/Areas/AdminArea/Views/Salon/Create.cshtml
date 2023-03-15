@@ -1,0 +1,52 @@
+﻿@model SalonDto
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container my-5">
+    <form class="forms-sample mt-5" method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label asp-for="Image1"> Image 1:</label>
+            <input class="form-control" style="width:300px" asp-for="Image1">
+            <span class="text-danger" asp-validation-for="Image1"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Image2">Image 2:</label>
+            <input class="form-control" style="width:300px" asp-for="Image2">
+            <span class="text-danger" asp-validation-for="Image2"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TitleForMen">Title For 1:</label>
+            <input class="form-control" style="width:300px" asp-for="TitleForMen">
+            <span class="text-danger" asp-validation-for="TitleForMen"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Pricing">Pricing:</label>
+            <input class="form-control" style="width:300px" asp-for="Pricing">
+            <span class="text-danger" asp-validation-for="Pricing"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Welcome">Welcome:</label>
+            <input class="form-control" style="width:300px" asp-for="Welcome">
+            <span class="text-danger" asp-validation-for="Welcome"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AboutSalon">AboutSalon:</label>
+            <input class="form-control" style="width:300px" asp-for="AboutSalon">
+            <span class="text-danger" asp-validation-for="AboutSalon"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TitleForWomen">Title For Women:</label>
+            <input class="form-control" style="width:300px" asp-for="TitleForWomen">
+            <span class="text-danger" asp-validation-for="TitleForWomen"></span>
+        </div>
+
+      
+
+
+        <button type="submit" class="btn btn-primary me-2">Submit</button>
+        <a asp-controller="Salon" asp-action="Index" class="btn btn-light">Cancel</a>
+    </form>
+</div>
+

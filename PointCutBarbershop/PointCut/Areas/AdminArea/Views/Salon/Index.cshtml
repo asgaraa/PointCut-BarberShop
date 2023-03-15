@@ -1,0 +1,74 @@
+﻿@model List<SalonDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/AdminArea/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="header d-flex justify-content-between my-5">
+                        <h1 class="card-title my-3">Events</h1>
+                        <div><a class="btn btn-success btn-sm my-4" asp-controller="Salon" asp-action="Create">Create</a></div>
+
+
+
+
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                  
+                                    <th> Image Left </th>
+                                    <th> Title Left </th>
+                                    <th> Image Right </th>
+                                    <th> Title Right </th>
+                                
+                                    <th> Setting </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var salon in Model)
+                                {
+                                    <tr>
+
+                                        <td>   <img style="width:100px; height:50px; border-radius:unset" src="~/Assets/images/Salon/@salon.ImageForMen" alt="Poster" /></td>
+                                        <td> @salon.TitleForMen </td>
+                                        <td>   <img style="width:100px; height:50px; border-radius:unset" src="~/Assets/images/Salon/@salon.ImageForWomen" alt="Poster" /></td>
+
+                                        <td> @salon.TitleForWomen </td>
+
+                                        <td>
+                                            @*<a class="btn btn-primary btn-sm" asp-action="Detail" asp-route-Id="@levent.Id"><i class="mdi mdi-account-card-details"></i></a>*@
+                                            <a class="btn btn-inverse-warning btn-sm" asp-action="Edit" asp-route-Id="@salon.Id"><i class="mdi mdi-grease-pencil"></i></a>
+                                            <form style="display:inline;" asp-action="Delete" asp-route-Id="@salon.Id">
+                                                <button type="submit" class="btn btn-danger btn-sm"><i class="mdi mdi-delete-forever"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                
+                                }
+                                
+                              
+                                 
+
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
